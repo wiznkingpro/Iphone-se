@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>qwe</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div class="iphone-cont">
+		<div class="iphone_screen">
+			<div class="iphone_screen_lock_screen" >
+
+				<div class="lock_screen_top_bar">
+					<div class="lock_screen_top_bar_element">
+						<p>No SIM</p>
+					</div>
+					<div class="lock_screen_top_bar_element">
+						<p>lock</p>
+					</div>
+					<div class="lock_screen_top_bar_element">
+						<p>100%</p>
+					</div>		
+				</div>
+				<div class="lock_screen_time">
+					<h1>1:21</h1>
+					<p>Thursday, 4 December</p>
+				</div>
+				<div class="lock_screen_press_unlock">
+					<p>Press Home to unlock</p>
+				</div>
+				
+			</div>
+		</div>
+		<div class="iphone_but" onclick="iphoneButClick()"></div>
+	</div>
+
+
+	<script type="text/javascript">
+	const iphoneScreenLockScreen = document.querySelector('.iphone_screen_lock_screen');
+	const iphoneScreen = document.querySelector('.iphone_screen');
+	
+	// Изначально экран выключен: блокировка скрыта, экран чёрный
+	iphoneScreenLockScreen.style.display = 'none';
+
+	let isScreenOn = false;      // экран выключен
+	let isLocked = true;         // всегда "заблокирован", когда включён
+
+	function iphoneButClick() {
+		if (!isScreenOn) {
+			// Включаем экран → показываем блокировку
+			iphoneScreenLockScreen.style.display = 'flex';
+			isScreenOn = true;
+			isLocked = true;
+		} else if (isLocked) {
+			// Экран включён и заблокирован → разблокировать
+			iphoneScreenLockScreen.style.display = 'none';
+			isLocked = false;
+			// Остаёмся на "домашнем экране" (чёрный фон)
+		}
+		// Если экран уже включён и разблокирован — ничего не делаем (как на iPhone)
+	}
+</script>
+</body>
+</html>

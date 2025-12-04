@@ -32,6 +32,10 @@
 				</div>
 				
 			</div>
+
+			<div class="iphone_screen_unlock">
+					<img src="https://i.pinimg.com/originals/4b/96/2c/4b962cde436de82776bc50dae5f73fc4.jpg" alt="">
+			</div>
 		</div>
 		<div class="iphone_but" onclick="iphoneButClick()"></div>
 	</div>
@@ -40,7 +44,7 @@
 	<script type="text/javascript">
 	const iphoneScreenLockScreen = document.querySelector('.iphone_screen_lock_screen');
 	const iphoneScreen = document.querySelector('.iphone_screen');
-	
+	const iphoneScreenUnlock = document.querySelector('.iphone_screen_unlock')
 	// Изначально экран выключен: блокировка скрыта, экран чёрный
 	iphoneScreenLockScreen.style.display = 'none';
 
@@ -57,7 +61,7 @@
 			// Экран включён и заблокирован → разблокировать
 			iphoneScreenLockScreen.style.display = 'none';
 			isLocked = false;
-			// Остаёмся на "домашнем экране" (чёрный фон)
+			iphoneScreenUnlock.style.display = 'flex'
 		}
 		// Если экран уже включён и разблокирован — ничего не делаем (как на iPhone)
 	}
